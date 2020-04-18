@@ -1,9 +1,14 @@
-import React, { Component } from './node_modules/react'
+import React, { Component } from 'react'
+import DisplayPanel from './DisplayPanel'
+import KeypadPanel from './KeypadPanel'
 
 class Calculator extends Component {
   render() {
     return (
-      <div />
+      <div>
+        <DisplayPanel />
+        <KeypadPanel />
+      </div>
     );
   }
 }

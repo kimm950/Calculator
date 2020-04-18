@@ -1,20 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
-import styled from 'styled-components'
 import Calculator from './components/Calculator'
-// import Details from './Details'
-
-const Container = styled.div`
-
-`
+import Details from './components/Details'
 
 class App extends Component {
   render() {
     return (
-      <Container>
+      <div className="container">
         <Calculator />
-        {/* <Details /> */}
-      </Container>
+        <Details />
+      </div>
     );
   }
 }
