@@ -1,6 +1,6 @@
 import React from 'react'
 
-const KeypadPanel = (onClick) => {
+const KeypadPanel = ({ onClick }) => {
   return (
     <div className="Keypad" />
   );
