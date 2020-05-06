@@ -5,7 +5,7 @@ const Keypad = styled.div`
   button {
     width: 75px;
     height: 75px;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: bold;
     border: none;
     transition: .5s;

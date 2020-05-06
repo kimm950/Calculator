@@ -26,7 +26,7 @@ class Details extends Component {
         <div className='detail-card'>
           <p>React Calculator</p>
           <p>Kimm950</p>
-          <a href='https://github.com/kimm95'>Visit my Github!</a>
+          <a href='https://github.com/kimm950'>Visit my Github!</a>
         </div>
       </Container>
     );
