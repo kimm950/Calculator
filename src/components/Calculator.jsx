@@ -9,11 +9,30 @@ const Container = styled.div`
   box-shadow: rgba(51, 51, 51, 0.3) 0px 1px 6px 0px;
   border-radius: 5px;
 `
+
+const AboutMeButton = styled.div`
+  width: 300px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: rgba(51, 51, 51, 0.3) 0px 1px 6px 0px;
+  background-color: #ffb514;
+  color: #fff;
+  font-weight: bold;
+  transition: 1s;
+  &:hover {
+    cursor: pointer;
+    box-shadow: none;
+  }
+`
 class Calculator extends Component {
   constructor() {
     super();
     this.state = {
-      result: ''
+      result: '',
+      isCalculatorOpen: true,
     }
   }
 
@@ -51,13 +70,32 @@ class Calculator extends Component {
     this.setState({ result: this.state.result.slice(0, -1) })
   }
 
+  handleClose = (close, hide, wide) => {
+    if (close) {
+      this.setState({ isCalculatorOpen: !this.state.isCalculatorOpen })
+    }
+    if (hide) {
+      this.setState({ isCalculatorOpen: !this.state.isCalculatorOpen })
+    }
+    if (wide) {
+      this.setState({ isCalculatorOpen: !this.state.isCalculatorOpen })
+    }
+  }
+
   render() {
-    const { result } = this.state
+    const { result, isCalculatorOpen } = this.state
     return (
-      <Container>
-        <DisplayPanel result={result} />
-        <KeypadPanel onClick={this.handleClickKeypad} />
-      </Container>
+      <div>
+        {isCalculatorOpen ? (
+          <AboutMeButton onClick={this.handleClose}>Toggle Calculator!</AboutMeButton>
+        ) : (
+            <Container>
+              <DisplayPanel result={result} onClick={() => this.handleClose} />
+              <KeypadPanel onClick={this.handleClickKeypad} />
+            </Container >
+          )
+        }
+      </div>
     );
   }
 }

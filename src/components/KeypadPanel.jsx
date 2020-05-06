@@ -31,9 +31,7 @@ const Keypad = styled.div`
     }
   }
 `
-//#03ad7d
-//#049066
-//#e6e6e6 
+
 const KeypadPanel = ({ onClick }) => {
   return (
     <Keypad>
