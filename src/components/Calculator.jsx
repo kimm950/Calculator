@@ -17,12 +17,35 @@ class Calculator extends Component {
     }
   }
 
+  handleClickKeypad = (key) => {
+    if (key === '=') {
+      this.getResult()
+    } else if (key === 'C') {
+      this.clear()
+
+    }
+  }
+
+  getResult = () => {
+    const { result } = this.state
+    let validateResult = ''
+    if (result.includes('--')) {
+      validateResult = result.replace('--', '+')
+    } else {
+      validateResult = result
+    }
+  }
+
+  clear = () => {
+    this.setState({ result: '' })
+  }
+
   render() {
     const { result } = this.state
     return (
       <Container>
         <DisplayPanel result={result} />
-        <KeypadPanel />
+        <KeypadPanel onClick={this.handleClickKeypad} />
       </Container>
     );
   }
