@@ -86,7 +86,7 @@ class Calculator extends Component {
     const { result, isCalculatorOpen } = this.state
     return (
       <div>
-        {isCalculatorOpen ? (
+        {!isCalculatorOpen ? (
           <AboutMeButton onClick={this.handleClose}>Toggle Calculator!</AboutMeButton>
         ) : (
             <Container>

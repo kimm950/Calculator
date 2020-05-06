@@ -9,25 +9,32 @@ const Keypad = styled.div`
     font-weight: bold;
     border: none;
     transition: .5s;
+    outline: none;
+
     &:hover {
       /* box-shadow: inset 0 0 5px 4px #e6e6e6; */
       cursor: pointer;
     }
   }
+
   .basic-row {
     background-color: #e6e6e6;
   }
+
   .number {
     background-color: #ffff;
+
     &:nth-child(17) {
      border-radius: 0 0 0 5px;
     }
   }
+
   .symbol {
     background-color: #03ad7d;
     color: #e6e6e6;
+
     &:nth-child(20) {
-    border-radius: 0 0 5px 0;
+      border-radius: 0 0 5px 0;
     }
   }
 `
