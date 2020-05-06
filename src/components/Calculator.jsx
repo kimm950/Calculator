@@ -22,7 +22,10 @@ class Calculator extends Component {
       this.getResult()
     } else if (key === 'C') {
       this.clear()
-
+    } else if (key === 'CE') {
+      this.backSpace()
+    } else {
+      this.setState({ result: this.state.result + key })
     }
   }
 
@@ -33,11 +36,19 @@ class Calculator extends Component {
       validateResult = result.replace('--', '+')
     } else {
       validateResult = result
+    } try {
+      this.setState({ result: (eval(validateResult) || '') + '' })
+    } catch (e) {
+      this.setState({ result: 'Error!' })
     }
   }
 
   clear = () => {
     this.setState({ result: '' })
+  }
+
+  backSpace = () => {
+    this.setState({ result: this.state.result.slice(0, -1) })
   }
 
   render() {
