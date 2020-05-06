@@ -30,7 +30,7 @@ const Keypad = styled.div`
   }
 
   .symbol {
-    background-color: #03ad7d;
+    background-color: #00aaa7;
     color: #e6e6e6;
 
     &:nth-child(20) {

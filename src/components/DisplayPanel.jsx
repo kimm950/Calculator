@@ -19,6 +19,9 @@ const Header = styled.div`
     &:nth-child(3){
       background-color: #51c22c;
     }
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 const Display = styled.div`
